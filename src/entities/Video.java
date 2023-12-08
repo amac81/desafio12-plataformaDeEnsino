@@ -4,10 +4,13 @@ public class Video extends Lesson{
 	private String url;
 	private int seconds;
 	
-	public Video() {}
-
-	public Video(String url, int seconds) {
+	public Video() {
 		super();
+	}
+
+
+	public Video(String title, String url, int seconds) {
+		super(title);
 		this.url = url;
 		this.seconds = seconds;
 	}
@@ -26,6 +29,13 @@ public class Video extends Lesson{
 
 	public void setSeconds(int seconds) {
 		this.seconds = seconds;
+	}
+
+
+	@Override
+	public int duration() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 	

@@ -1,6 +1,6 @@
 package entities;
 
-public class Lesson {
+public abstract class Lesson {
 	private String title;
 	
 	public Lesson() {}
@@ -17,9 +17,6 @@ public class Lesson {
 		this.title = title;
 	}
 	
-	public int duration() {
-		return 0;
-	}
-	
+	public abstract int duration();	
 	
 }

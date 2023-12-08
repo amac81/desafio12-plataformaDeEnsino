@@ -4,10 +4,12 @@ public class Task extends Lesson{
 	private String description;
 	private int questionCount;
 	
-	public Task() {}
-
-	public Task(String description, int questionCount) {
+	public Task() {
 		super();
+	}
+
+	public Task(String title, String description, int questionCount) {
+		super(title);
 		this.description = description;
 		this.questionCount = questionCount;
 	}
@@ -26,6 +28,12 @@ public class Task extends Lesson{
 
 	public void setQuestionCount(int questionCount) {
 		this.questionCount = questionCount;
+	}
+
+	@Override
+	public int duration() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }
