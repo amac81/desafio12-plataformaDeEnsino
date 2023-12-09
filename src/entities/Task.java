@@ -30,10 +30,10 @@ public class Task extends Lesson{
 		this.questionCount = questionCount;
 	}
 
+	//final para evitar inconsistencias
 	@Override
-	public int duration() {
-		// TODO Auto-generated method stub
-		return 0;
+	public final int duration() {
+		return getQuestionCount();
 	}
 
 }

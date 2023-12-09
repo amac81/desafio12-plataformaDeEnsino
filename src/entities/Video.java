@@ -31,11 +31,10 @@ public class Video extends Lesson{
 		this.seconds = seconds;
 	}
 
-
+	//final para evitar inconsistencias
 	@Override
-	public int duration() {
-		// TODO Auto-generated method stub
-		return 0;
+	public final int duration() {
+		return getSeconds();
 	}
 	
 	
