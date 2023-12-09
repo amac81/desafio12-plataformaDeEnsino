@@ -1,5 +1,10 @@
 package entities;
 
+
+//classe abstrata;
+// nao pode ser instanciada 
+//(notacao UML: italico)
+//Para garantir heranca total: apenas as subclasses podem ser instanciadas
 public abstract class Lesson {
 	private String title;
 	
@@ -17,6 +22,8 @@ public abstract class Lesson {
 		this.title = title;
 	}
 	
+	//metodo abstrata
+	//(notacao UML: italico)
 	public abstract int duration();	
 	
 }

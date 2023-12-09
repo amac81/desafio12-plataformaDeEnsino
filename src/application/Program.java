@@ -26,9 +26,10 @@ public class Program {
 		System.out.println("hello!!!");
 		
 		
-		//polimorfismo
-		Lesson lessonTask = new Task();
+		//polimorfismo e upcasting
+		/*Lesson lessonTask = new Task();
 		Lesson lessonVideo = new Video();
+		
 		
 		if(lessonTask instanceof Task) {
 			System.out.println("Quantidade de questões: " + lessonTask.duration());
@@ -37,6 +38,7 @@ public class Program {
 		if(lessonVideo instanceof Video) {
 			System.out.println("Duração em segundos: " + lessonVideo.duration());
 		}
+		*/
 		
 		sc.close();
 	}
