@@ -11,9 +11,7 @@ package application;
 import java.util.Locale;
 import java.util.Scanner;
 
-import entities.Lesson;
-import entities.Task;
-import entities.Video;
+import utils.Ui;
 
 public class Program {
 
@@ -22,9 +20,19 @@ public class Program {
 		
 		//Objeto Scanner para entrada de dados, a partir de System.in 
 		Scanner sc = new Scanner(System.in);
-
-		System.out.println("hello!!!");
 		
+		//Variaveis
+		int nAulas = 0; 
+		int reps = 0;
+
+		nAulas = Ui.askAndValidateIntInput("Quantas aulas tem o curso? ", sc, 1, 999);
+		System.out.println();		
+		
+		do {
+			
+			
+			reps ++;
+		} while(reps < nAulas);
 		
 		//polimorfismo e upcasting
 		/*Lesson lessonTask = new Task();

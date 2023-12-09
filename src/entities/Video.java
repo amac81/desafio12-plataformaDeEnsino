@@ -34,6 +34,7 @@ public class Video extends Lesson{
 	//final para evitar inconsistencias
 	@Override
 	public final int duration() {
+		//A duração (em segundos) de uma aula video é a própria duração do vídeo
 		return getSeconds();
 	}
 	
