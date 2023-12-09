@@ -48,5 +48,46 @@ public class Ui {
 		
 		return value;
 	}
+	
+	public static char askAndValidateCharInput(String askMessage, Scanner scanner, char[]options) {
+		
+		char option = 0;
+		
+		
+		if(options!=null) {
+			boolean notValid = false;
+			int nOptions = options.length;
+			
+			System.out.print(askMessage);
+			do {
+				option = scanner.next().charAt(0);
+				
+				//percorrer todo o array
+				
+				for(int i=0; i<nOptions; i++) {
+					if(options[i] == option)
+					{
+						return option;
+					}
+					else {
+						notValid = true;
+					}
+				}
+			
+				if(notValid) {
+					System.out.print("Valor invalido! Favor digitar um destes caracteres (");
+					for(int i=0; i<nOptions; i++) {
+						System.out.print(options[i]);
+						if(i<nOptions-1)
+							System.out.print(",");
+					}
+					System.out.print("): ");
+				}	
+				
+			} while(notValid);
+		}
+		
+		return 0;
+	}
 
 }

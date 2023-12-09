@@ -29,6 +29,11 @@ public class Program {
 		System.out.println();		
 		
 		do {
+			System.out.println("Dados da " + (reps+1) + "a aula: ");
+			
+			char[] options = {'c','t'};
+			
+			char tipoAula = Ui.askAndValidateCharInput("Conteúdo ou tarefa (c/t)? ", sc, options);
 			
 			
 			reps ++;
