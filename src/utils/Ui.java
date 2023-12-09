@@ -67,6 +67,8 @@ public class Ui {
 				for(int i=0; i<nOptions; i++) {
 					if(options[i] == option)
 					{
+						//consumir quebra de linha
+						scanner.nextLine();	
 						return option;
 					}
 					else {
@@ -78,8 +80,10 @@ public class Ui {
 					System.out.print("Valor invalido! Favor digitar um destes caracteres (");
 					for(int i=0; i<nOptions; i++) {
 						System.out.print(options[i]);
-						if(i<nOptions-1)
+						
+						if(i<nOptions-1) {
 							System.out.print(",");
+						}
 					}
 					System.out.print("): ");
 				}	

@@ -22,10 +22,10 @@ public class Program {
 		Scanner sc = new Scanner(System.in);
 		
 		//Variaveis
-		int nAulas = 0; 
+		int nLessons = 0; 
 		int reps = 0;
 
-		nAulas = Ui.askAndValidateIntInput("Quantas aulas tem o curso? ", sc, 1, 999);
+		nLessons = Ui.askAndValidateIntInput("Quantas aulas tem o curso? ", sc, 1, 999);
 		System.out.println();		
 		
 		do {
@@ -33,11 +33,30 @@ public class Program {
 			
 			char[] options = {'c','t'};
 			
-			char tipoAula = Ui.askAndValidateCharInput("Conteúdo ou tarefa (c/t)? ", sc, options);
+			char lessonType = Ui.askAndValidateCharInput("Conteúdo ou tarefa (c/t)? ", sc, options);
+			
+			System.out.print("Título: ");
+			String title = sc.nextLine();
+			
+			if(lessonType =='c') {
+				System.out.print("URL do vídeo: ");
+				String videoUrl = sc.nextLine();
+				int videoDuration = Ui.askAndValidateIntInput("Duração em segundos: ", sc, 1, 9999);
+			}
+			else{
+				System.out.print("Descrição: ");
+				String descritpion = sc.nextLine();
+				int nQuestions = Ui.askAndValidateIntInput("Quantidade de questões: ", sc, 1, 999);
+			}
+			
+			
+			if(nLessons>1) {
+				System.out.println();		
+			}
 			
 			
 			reps ++;
-		} while(reps < nAulas);
+		} while(reps < nLessons);
 		
 		//polimorfismo e upcasting
 		/*Lesson lessonTask = new Task();
