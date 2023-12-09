@@ -8,9 +8,14 @@
 
 package application;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 
+import entities.Lesson;
+import entities.Task;
+import entities.Video;
 import utils.Ui;
 
 public class Program {
@@ -25,6 +30,9 @@ public class Program {
 		int nLessons = 0; 
 		int reps = 0;
 
+		//lista de Lesson
+		List <Lesson> lessons = new ArrayList<Lesson>();
+		
 		nLessons = Ui.askAndValidateIntInput("Quantas aulas tem o curso? ", sc, 1, 999);
 		System.out.println();		
 		
@@ -38,25 +46,41 @@ public class Program {
 			System.out.print("Título: ");
 			String title = sc.nextLine();
 			
+			Lesson lesson;
+			
 			if(lessonType =='c') {
 				System.out.print("URL do vídeo: ");
-				String videoUrl = sc.nextLine();
-				int videoDuration = Ui.askAndValidateIntInput("Duração em segundos: ", sc, 1, 9999);
+				String url = sc.nextLine();
+				int duration = Ui.askAndValidateIntInput("Duração em segundos: ", sc, 1, 9999);
+				
+				//instanciacao de um Video;
+				lesson = new Video(title, url, duration);
 			}
 			else{
 				System.out.print("Descrição: ");
-				String descritpion = sc.nextLine();
+				String description = sc.nextLine();
 				int nQuestions = Ui.askAndValidateIntInput("Quantidade de questões: ", sc, 1, 999);
+				
+				//instanciacao de uma Task;
+				lesson = new Task(title, description, nQuestions);
 			}
 			
+			lessons.add(lesson);			
 			
 			if(nLessons>1) {
 				System.out.println();		
 			}
 			
-			
 			reps ++;
 		} while(reps < nLessons);
+		
+		
+		System.out.println("LESSONS:");
+		
+		for(Lesson l: lessons) {
+			System.out.println(l);
+		}
+		
 		
 		//polimorfismo e upcasting
 		/*Lesson lessonTask = new Task();

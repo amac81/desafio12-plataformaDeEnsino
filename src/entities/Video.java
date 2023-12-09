@@ -37,7 +37,10 @@ public class Video extends Lesson{
 		//A duração (em segundos) de uma aula video é a própria duração do vídeo
 		return getSeconds();
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "Video [url=" + url + ", seconds=" + seconds + "]";
+	}
 
 }

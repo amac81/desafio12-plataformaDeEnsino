@@ -37,4 +37,10 @@ public class Task extends Lesson{
 		return getQuestionCount() * 5;
 	}
 
+	@Override
+	public String toString() {
+		return "Task [description=" + description + ", questionCount=" + questionCount + "]";
+	}
+	
+
 }
