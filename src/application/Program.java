@@ -85,7 +85,16 @@ public class Program {
 		
 		if(lessons != null) {
 			for(Lesson l: lessons) {
-				totalDuration+= l.duration();
+				
+				//duração de uma aula tarefa é de cinco minutos por questão
+				//secs = min×60 
+				if(l instanceof Task) {
+					totalDuration+= l.duration() * (5 * 60);
+				}	
+				
+				if(l instanceof Video) {
+					totalDuration+= l.duration();
+				}
 			}
 		}
 		

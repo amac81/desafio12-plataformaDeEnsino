@@ -32,11 +32,8 @@ public class Task extends Lesson{
 
 	//final para evitar inconsistencias
 	@Override
-	public final int duration() {
-		//duração de uma aula tarefa é de cinco minutos por questão
-		//secs = min×60 
-		
-		return getQuestionCount() * (5 * 60);
+	public final int duration() {		
+		return getQuestionCount();
 	}
 
 	@Override
