@@ -79,7 +79,6 @@ public class Program {
 			reps ++;
 		} while(reps < nLessons);
 		
-		
 		showReport(lessons);
 		
 		sc.close();
