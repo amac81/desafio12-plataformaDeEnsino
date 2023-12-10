@@ -46,7 +46,7 @@ public class Program {
 			System.out.print("Título: ");
 			String title = sc.nextLine();
 			
-			Lesson lesson;
+			Lesson lesson = null;
 			
 			if(lessonType =='c') {
 				System.out.print("URL do vídeo: ");
@@ -75,27 +75,21 @@ public class Program {
 		} while(reps < nLessons);
 		
 		
-		System.out.println("LESSONS:");
-		
-		for(Lesson l: lessons) {
-			System.out.println(l);
-		}
-		
-		
-		//polimorfismo e upcasting
-		/*Lesson lessonTask = new Task();
-		Lesson lessonVideo = new Video();
-		
-		
-		if(lessonTask instanceof Task) {
-			System.out.println("Quantidade de questões: " + lessonTask.duration());
-		}	
-		
-		if(lessonVideo instanceof Video) {
-			System.out.println("Duração em segundos: " + lessonVideo.duration());
-		}
-		*/
+		showReport(lessons);
 		
 		sc.close();
 	}
+	
+	private static void showReport(List<Lesson> lessons) {
+		int totalDuration = 0;
+		
+		if(lessons != null) {
+			for(Lesson l: lessons) {
+				totalDuration+= l.duration();
+			}
+		}
+		
+		System.out.println("DURAÇÃO TOTAL DO CURSO = " + totalDuration + " segundos");
+	}
+	
 }
