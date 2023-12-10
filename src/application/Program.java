@@ -1,5 +1,10 @@
 /**
-* Este programa ...
+* Este programa implementa uma plataforma de ensino
+* Os conteudos podem ser na forma de vídeo ou tarefa
+* 
+* É pedido ao utilizador dados sobre os N conteudos do curso (inclusive a duracao do conteúdo)
+* 
+* no final é apresentado um relatório com a duração total, sem segundos, de todos os conteúdos do curso
 * 
 * @author  Arnaldo Canelas
 * @version 1.0
@@ -39,9 +44,9 @@ public class Program {
 		do {
 			System.out.println("Dados da " + (reps+1) + "a aula: ");
 			
-			char[] options = {'c','t'};
+			char[] lessonTypes = {'c','t'};
 			
-			char lessonType = Ui.askAndValidateCharInput("Conteúdo ou tarefa (c/t)? ", sc, options);
+			char lessonType = Ui.askAndValidateCharInput("Conteúdo ou tarefa (c/t)? ", sc, lessonTypes);
 			
 			System.out.print("Título: ");
 			String title = sc.nextLine();
